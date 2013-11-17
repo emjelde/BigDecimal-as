@@ -17,7 +17,7 @@
 /**
  * @author Elena Semukhina
  */
-package
+package de.mjel.math
 {
 import org.flexunit.asserts.assertEquals;
 
@@ -37,7 +37,7 @@ public class BigDecimalConvertTest
         var a:String = "-123809648392384754573567356745735.63567890295784902768787678287E+21";
         var aNumber:BigDecimal = new BigDecimal(a);
         var result:Number = -1.2380964839238476E53;
-        assertEquals("incorrect value", result, aNumber.numberValue()); //, 0);
+        assertEquals("incorrect value", result, aNumber.toNumber()); //, 0);
     }
 
     [Test]
@@ -49,7 +49,7 @@ public class BigDecimalConvertTest
         var a:String = "123809648392384754573567356745735.63567890295784902768787678287E+21";
         var aNumber:BigDecimal = new BigDecimal(a);
         var result:Number = 1.2380964839238476E53;
-        assertEquals("incorrect value", result, aNumber.numberValue());//, 0);
+        assertEquals("incorrect value", result, aNumber.toNumber());//, 0);
     }
 
     // todo result is 0 instead of +Infinity
@@ -62,7 +62,7 @@ public class BigDecimalConvertTest
 //        var a:String = "123809648392384754573567356745735.63567890295784902768787678287E+400";
 //        var aNumber:BigDecimal = new BigDecimal(a);
 //        var result:Number = Number.POSITIVE_INFINITY;
-//        assertEquals("incorrect value", result, aNumber.numberValue());//, 0);
+//        assertEquals("incorrect value", result, aNumber.toNumber());//, 0);
 //    }
 
     // todo result is 0 instead of -Infinity
@@ -75,7 +75,7 @@ public class BigDecimalConvertTest
 //        var a:String = "-123809648392384754573567356745735.63567890295784902768787678287E+400";
 //        var aNumber:BigDecimal = new BigDecimal(a);
 //        var result:Number = Number.NEGATIVE_INFINITY;
-//        assertEquals("incorrect value", result, aNumber.numberValue()); //, 0);
+//        assertEquals("incorrect value", result, aNumber.toNumber()); //, 0);
 //    }
 
 //    [Test]
@@ -86,7 +86,7 @@ public class BigDecimalConvertTest
 //    var a:String = "-123809648392384754573567356745735.63567890295784902768787678287E-400";
 //    var aNumber:BigDecimal = new BigDecimal(a);
 //    var minusZero:long:var = -9223372036854775808L;
-//    var result:Number = aNumber.numberValue();
+//    var result:Number = aNumber.toNumber();
 //    assertTrue("incorrect value", Double.doubleToLongBits(result) == minusZero);
 //}
 
@@ -98,7 +98,7 @@ public class BigDecimalConvertTest
 //    var a:String = "123809648392384754573567356745735.63567890295784902768787678287E-400";
 //    var aNumber:BigDecimal = new BigDecimal(a);
 //    var zero:long = 0;
-//    var result:Number = aNumber.numberValue();
+//    var result:Number = aNumber.toNumber();
 //    assertTrue("incorrect value", Double.doubleToLongBits(result) == zero);
 //}
 

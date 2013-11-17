@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package
+package de.mjel.math
 {
 import flash.utils.ByteArray;
 import flash.utils.IExternalizable;
@@ -180,9 +180,9 @@ public class BigDecimalTest
 
         var total:BigDecimal = c.add(d).add(e);
 
-        assertEquals(0.76479, total.numberValue());
+        assertEquals(0.76479, total.toNumber());
         total = total.setScale(3, MathContext.ROUND_HALF_UP);
-        assertEquals(0.765, total.numberValue());
+        assertEquals(0.765, total.toNumber());
     }
 
     [Test]
@@ -222,7 +222,7 @@ public class BigDecimalTest
 
         total = c.subtract(d).subtract(e);
 
-        assertEquals(-0.46449, total.numberValue());
+        assertEquals(-0.46449, total.toNumber());
     }
 
     [Test]
@@ -241,25 +241,25 @@ public class BigDecimalTest
 
         total = c.multiply(d).multiply(e);
 
-        var number:Number = total.numberValue();
+        var number:Number = total.toNumber();
         assertEquals(0.013960175213985, number);
 
         //Test envoyes par NDiaga
-        number = new BigDecimal("2.3").multiply(new BigDecimal("0.95")).numberValue();
+        number = new BigDecimal("2.3").multiply(new BigDecimal("0.95")).toNumber();
         assertEquals(2.185, number);
-        number = new BigDecimal("2.3").multiply(new BigDecimal("0.18")).numberValue();
+        number = new BigDecimal("2.3").multiply(new BigDecimal("0.18")).toNumber();
         assertEquals(0.414, number);
-        number = new BigDecimal("2.3").multiply(new BigDecimal("0.21")).numberValue();
+        number = new BigDecimal("2.3").multiply(new BigDecimal("0.21")).toNumber();
         assertEquals(0.483, number);
-        number = new BigDecimal("2.3").multiply(new BigDecimal("0.24")).numberValue();
+        number = new BigDecimal("2.3").multiply(new BigDecimal("0.24")).toNumber();
         assertEquals(0.552, number);
-        number = new BigDecimal("2.3").multiply(new BigDecimal("0.29")).numberValue();
+        number = new BigDecimal("2.3").multiply(new BigDecimal("0.29")).toNumber();
         assertEquals(0.667, number);
-        number = new BigDecimal("75").multiply(new BigDecimal("95")).numberValue();
+        number = new BigDecimal("75").multiply(new BigDecimal("95")).toNumber();
         assertEquals(7125, number);
 
         //Tests envoyes par Simon
-        number = new BigDecimal("8490.675").multiply(new BigDecimal("100")).numberValue();
+        number = new BigDecimal("8490.675").multiply(new BigDecimal("100")).toNumber();
         assertEquals(849067.5, number);
     }
 
@@ -318,16 +318,16 @@ public class BigDecimalTest
     }
 
     [Test]
-    public function signum():void
+    public function sign():void
     {
-        assertEquals(0, new BigDecimal("0").signum());
-        assertEquals(0, new BigDecimal("0").abs().signum());
+        assertEquals(0, new BigDecimal("0").sign);
+        assertEquals(0, new BigDecimal("0").abs().sign);
 
-        assertEquals(-1, new BigDecimal("-32.345").signum());
-        assertEquals(1, new BigDecimal("-32.345").abs().signum());
-//        assertEquals(1, new BigDecimal("-32.345").plus().signum());
+        assertEquals(-1, new BigDecimal("-32.345").sign);
+        assertEquals(1, new BigDecimal("-32.345").abs().sign);
+//        assertEquals(1, new BigDecimal("-32.345").plus().sign);
 
-        assertEquals(-1, new BigDecimal("32.345").negate().signum());
+        assertEquals(-1, new BigDecimal("32.345").negate().sign);
     }
 
     [Test]
@@ -541,12 +541,12 @@ public class BigDecimalTest
     }
 
     [Test]
-    public function numberValue():void
+    public function toNumber():void
     {
         var v:BigDecimal = new BigDecimal("1.234E10");
         assertEquals("1.234E+10", v.toCanonicalString());
 
-        var n:Number = v.numberValue();
+        var n:Number = v.toNumber();
         assertEquals(12340000000, n);
     }
 

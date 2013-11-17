@@ -17,7 +17,7 @@
 /**
  * @author Elena Semukhina
  */
-package
+package de.mjel.math
 {
 import org.flexunit.asserts.assertEquals;
 import org.flexunit.asserts.assertFalse;
@@ -26,7 +26,7 @@ import org.flexunit.asserts.assertTrue;
 /**
  * Class:  BigDecimal
  * Methods: abs, compareTo, equals, hashCode,
- * max, min, negate, signum
+ * max, min, negate, sign
  */
 public class BigDecimalCompareTest
 {
@@ -543,38 +543,38 @@ public class BigDecimalCompareTest
 
     [Test]
     /**
-     * signum() for a positive BigDecimal
+     * sign for a positive BigDecimal
      */
-    public function testSignumPositive():void
+    public function testSignPositive():void
     {
         var a:String = "92948782094488478231212478987482988429808779810457634781384756794987";
         var aScale:int = 41;
         var aNumber:BigDecimal = BigDecimal.createFromUnscaledInteger(a, aScale);
-        assertEquals("incorrect value", 1, aNumber.signum());
+        assertEquals("incorrect value", 1, aNumber.sign);
     }
 
     [Test]
     /**
-     * signum() for a negative BigDecimal
+     * sign for a negative BigDecimal
      */
-    public function testSignumNegative():void
+    public function testSignNegative():void
     {
         var a:String = "-92948782094488478231212478987482988429808779810457634781384756794987";
         var aScale:int = 41;
         var aNumber:BigDecimal = BigDecimal.createFromUnscaledInteger(a, aScale);
-        assertEquals("incorrect value", -1, aNumber.signum());
+        assertEquals("incorrect value", -1, aNumber.sign);
     }
 
     [Test]
     /**
-     * signum() for zero
+     * sign for zero
      */
-    public function testSignumZero():void
+    public function testSignZero():void
     {
         var a:String = "0";
         var aScale:int = 41;
         var aNumber:BigDecimal = BigDecimal.createFromUnscaledInteger(a, aScale);
-        assertEquals("incorrect value", 0, aNumber.signum());
+        assertEquals("incorrect value", 0, aNumber.sign);
     }
 }
 }

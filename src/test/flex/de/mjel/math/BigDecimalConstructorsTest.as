@@ -17,7 +17,7 @@
 /**
  * @author Elena Semukhina
  */
-package
+package de.mjel.math
 {
 import org.flexunit.asserts.assertEquals;
 import org.flexunit.asserts.fail;
@@ -37,7 +37,7 @@ public class BigDecimalConstructorsTest
         var oneS:String = "1";
         var oneD:Number = 1.0;
         assertEquals("incorrect string value", oneS, BigDecimal.ONE.toCanonicalString());
-        assertEquals("incorrect double value", oneD, BigDecimal.ONE.numberValue()); //, 0);
+        assertEquals("incorrect double value", oneD, BigDecimal.ONE.toNumber()); //, 0);
     }
 
     [Test]
@@ -49,7 +49,7 @@ public class BigDecimalConstructorsTest
         var oneS:String = "10";
         var oneD:Number = 10.0;
         assertEquals("incorrect string value", oneS, BigDecimal.TEN.toCanonicalString());
-        assertEquals("incorrect double value", oneD, BigDecimal.TEN.numberValue()); //, 0);
+        assertEquals("incorrect double value", oneD, BigDecimal.TEN.toNumber()); //, 0);
     }
 
     [Test]
@@ -61,7 +61,7 @@ public class BigDecimalConstructorsTest
         var oneS:String = "0";
         var oneD:Number = 0.0;
         assertEquals("incorrect string value", oneS, BigDecimal.ZERO.toCanonicalString());
-        assertEquals("incorrect double value", oneD, BigDecimal.ZERO.numberValue()); //, 0);
+        assertEquals("incorrect double value", oneD, BigDecimal.ZERO.toNumber()); //, 0);
     }
 
 //    [Test]

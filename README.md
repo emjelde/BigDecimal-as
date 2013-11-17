@@ -3,7 +3,7 @@ BigDecimal.as
 
 *Now with added _enterpriseyness_!!*
 
-This project is a continuation of the de-facto [ActionScript3 BigDecimal](http://code.google.com/p/bigdecimal/) implementation focusing on
+This project is a continuation of the [ActionScript3 BigDecimal](http://code.google.com/p/bigdecimal/) implementation focusing on
 
 * Correctness
 * Performance

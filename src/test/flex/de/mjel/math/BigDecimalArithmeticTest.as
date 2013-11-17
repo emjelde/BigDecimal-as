@@ -14,7 +14,7 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-package
+package de.mjel.math
 {
 import org.flexunit.asserts.assertEquals;
 import org.flexunit.asserts.fail;

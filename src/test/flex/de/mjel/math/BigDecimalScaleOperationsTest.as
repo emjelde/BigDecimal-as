@@ -17,7 +17,7 @@
 /**
  * @author Elena Semukhina
  */
-package
+package de.mjel.math
 {
 import org.flexunit.asserts.assertEquals;
 import org.flexunit.asserts.assertTrue;
