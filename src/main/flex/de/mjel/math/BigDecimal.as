@@ -115,6 +115,17 @@ package de.mjel.math {
       private var string:String;
 
       /**
+       * Translates a Number into a BigDecimal, using the Number's canonical string representation
+       * provided by the Number.toString() method.
+       *
+       * @param value Number to convert to a BigDecimal.
+       * @return a BigDecimal whose value is equal to or approximately equal to the value of value.
+       */
+      public static function valueOf(value:Number):BigDecimal {
+         return new BigDecimal(value);
+      }
+
+      /**
        * Constructs a new <code>BigDecimal</code> instance from a given unscaled value
        * <code>unscaledVal</code> and a given scale. The value of this instance is
        * <code>unscaledVal</code> (<code>10^-scale</code>). The result is rounded according
