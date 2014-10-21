@@ -3,7 +3,7 @@
 
   <groupId>de.mjel</groupId>
   <artifactId>bigdecimal-as</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>swc</packaging>
 
   <name>BigDecimal-as</name>
@@ -25,6 +25,7 @@
         <version>${flexmojos.version}</version>
         <extensions>true</extensions>
         <configuration>
+          <debug>false</debug>
           <optimize>true</optimize>
           <themes>
             <theme>${settings.localRepository}/com/adobe/flex/framework/framework/${flex.version}/configs_zip/themes/Spark/spark.css</theme>
